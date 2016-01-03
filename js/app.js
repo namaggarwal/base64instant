@@ -23,6 +23,9 @@ function onInputKeyUp(){
     var encStr = encode(val);
     encObj.innerHTML = encStr;
 
+    //Remove all new line breaks
+    val = val.replace(/\r?\n|\r/g,"")
+
     //Decoding should be done only if string is a multiple of 4
     //Else it is not a valid base64
     if(val.length%4 == 0){
